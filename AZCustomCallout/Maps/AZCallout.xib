@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="AZCalloutView" customModule="AZCustomCallout" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="358" height="195"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" alpha="0.20000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NY" translatesAutoresizingMaskIntoConstraints="NO" id="Olp-KH-dxa">
+                    <rect key="frame" x="0.0" y="0.0" width="358" height="195"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZkW-Rh-DaG">
+                    <rect key="frame" x="0.0" y="141" width="358" height="54"/>
+                    <color key="backgroundColor" red="0.35294117650000001" green="0.63921568630000003" blue="0.99215686270000003" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="baf-rc-YNf"/>
+                    </constraints>
+                    <state key="normal" title="CUSTOM ACTION">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="buttonTouched:" destination="iN0-l3-epB" eventType="touchUpInside" id="pda-wj-2Us"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to NY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQu-L6-fFf">
+                    <rect key="frame" x="114" y="58" width="130.5" height="25"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="18"/>
+                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VQu-L6-fFf" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="05C-UA-pwN"/>
+                <constraint firstAttribute="bottom" secondItem="Olp-KH-dxa" secondAttribute="bottom" id="55j-uv-6lm"/>
+                <constraint firstItem="Olp-KH-dxa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Ieg-nM-b07"/>
+                <constraint firstItem="ZkW-Rh-DaG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KC9-DT-H5c"/>
+                <constraint firstItem="Olp-KH-dxa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="OIc-D5-pTR"/>
+                <constraint firstItem="VQu-L6-fFf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-27" id="eNP-rL-ZMj"/>
+                <constraint firstAttribute="trailing" secondItem="Olp-KH-dxa" secondAttribute="trailing" id="rtM-UY-qJW"/>
+                <constraint firstAttribute="trailing" secondItem="ZkW-Rh-DaG" secondAttribute="trailing" id="s8g-7L-4RA"/>
+                <constraint firstAttribute="bottom" secondItem="ZkW-Rh-DaG" secondAttribute="bottom" id="ze8-pV-iW2"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="343" y="154.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="NY" width="275" height="165"/>
+    </resources>
+</document>
