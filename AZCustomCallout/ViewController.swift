@@ -11,7 +11,7 @@ import MapKit
 
 class ViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var mapView: MKMapView!
-    private var statueOfLibertyAnnotation: StatueOfLibertyAnnotation!
+    fileprivate var statueOfLibertyAnnotation: StatueOfLibertyAnnotation!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +22,7 @@ class ViewController: UIViewController, MKMapViewDelegate {
         mapView.showAnnotations(mapView.annotations, animated: true)
     }
     
-    func mapView(mapView: MKMapView, viewForAnnotation annotation: MKAnnotation) -> MKAnnotationView? {
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         return StatueOfLibertyAnnotationView(annotation: statueOfLibertyAnnotation, reuseIdentifier: "StatueOfLibertyAnnotation")
     }
 }

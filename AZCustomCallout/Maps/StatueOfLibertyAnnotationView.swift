@@ -10,23 +10,23 @@ import Foundation
 import MapKit
 
 class StatueOfLibertyAnnotationView : MKPinAnnotationView {
-    private var calloutView: AZCalloutView?
-    private var hitOutside:Bool = true
+    fileprivate var calloutView: AZCalloutView?
+    fileprivate var hitOutside:Bool = true
     
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         let calloutViewAdded = calloutView?.superview != nil
         
         if (selected || !selected && hitOutside) {
             super.setSelected(selected, animated: animated)
         }
         
-        self.superview?.bringSubviewToFront(self)
+        self.superview?.bringSubview(toFront: self)
         
         if (calloutView == nil) {
-            calloutView = UINib(nibName: "AZCallout", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as? AZCalloutView
+            calloutView = UINib(nibName: "AZCallout", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as? AZCalloutView
         }
         
-        if (self.selected && !calloutViewAdded) {
+        if (self.isSelected && !calloutViewAdded) {
             let width = 181.0
             let height = 155.0
             let calloutHeightOffset = 5.0
@@ -38,25 +38,25 @@ class StatueOfLibertyAnnotationView : MKPinAnnotationView {
             calloutView!.style()
             
             addSubview(calloutView!)
-            bringSubviewToFront(calloutView!)
+            bringSubview(toFront: calloutView!)
         }
         
-        if (!self.selected) {
+        if (!self.isSelected) {
             calloutView?.removeFromSuperview()
         }
     }
     
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        var hitView = super.hitTest(point, withEvent: event)
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        var hitView = super.hitTest(point, with: event)
         
-        if hitView == nil && self.selected {
-            let pointInCallout = convertPoint(point, toView: calloutView)
-            hitView = calloutView!.hitTest(pointInCallout, withEvent: event)
+        if hitView == nil && self.isSelected {
+            let pointInCallout = convert(point, to: calloutView)
+            hitView = calloutView!.hitTest(pointInCallout, with: event)
         }
         
         if let callout = calloutView {
-            if (hitView == nil && self.selected) {
-                hitView = callout.hitTest(point, withEvent: event)
+            if (hitView == nil && self.isSelected) {
+                hitView = callout.hitTest(point, with: event)
             }
         }
         

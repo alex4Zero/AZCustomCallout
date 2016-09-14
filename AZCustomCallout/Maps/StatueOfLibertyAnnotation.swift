@@ -10,8 +10,8 @@ import Foundation
 import MapKit
 
 class StatueOfLibertyAnnotation : NSObject, MKAnnotation {
-    internal private(set) var title: String?
-    internal private(set) var coordinate: CLLocationCoordinate2D
+    internal fileprivate(set) var title: String?
+    internal fileprivate(set) var coordinate: CLLocationCoordinate2D
     
     override init() {
         self.title = "The Statue of Liberty"

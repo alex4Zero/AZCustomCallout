@@ -11,19 +11,19 @@ import UIKit
 
 class AZCalloutView : UIView {
     func style() {
-        layer.borderColor = UIColor.blackColor().CGColor
+        layer.borderColor = UIColor.black.cgColor
         layer.borderWidth = 1
     }
     
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        let viewPoint = superview?.convertPoint(point, toView: self) ?? point
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let viewPoint = superview?.convert(point, to: self) ?? point
     
-        let view = super.hitTest(viewPoint, withEvent: event)
+        let view = super.hitTest(viewPoint, with: event)
     
         return view
     }
     
-    @IBAction func buttonTouched(sender: AnyObject) {
+    @IBAction func buttonTouched(_ sender: AnyObject) {
         print("Hello from NY")
     }
 }
