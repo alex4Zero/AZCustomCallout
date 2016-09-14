@@ -8,10 +8,10 @@ Here is an example of custom callout view for iOS MapKit implemented with Swift 
 * Create custom class inherited from UIView and assign it to XIB view
 * Overwrite `hitTest` function:
 ```swift
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        let viewPoint = superview?.convertPoint(point, toView: self) ?? point
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let viewPoint = superview?.convert(point, to: self) ?? point
     
-        let view = super.hitTest(viewPoint, withEvent: event)
+        let view = super.hitTest(viewPoint, with: event)
     
         return view
     }
@@ -21,17 +21,17 @@ Here is an example of custom callout view for iOS MapKit implemented with Swift 
 * Overwrite `setSelected` function to manually create and add callout view (see [example](https://github.com/alex4Zero/AZCustomCallout/blob/master/AZCustomCallout/Maps/StatueOfLibertyAnnotationView.swift))
 * Overwrite `hitTest` function:
 ```swift
-    override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        var hitView = super.hitTest(point, withEvent: event)
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        var hitView = super.hitTest(point, with: event)
         
-        if hitView == nil && self.selected {
-            let pointInCallout = convertPoint(point, toView: calloutView)
-            hitView = calloutView!.hitTest(pointInCallout, withEvent: event)
+        if hitView == nil && self.isSelected {
+            let pointInCallout = convert(point, to: calloutView)
+            hitView = calloutView!.hitTest(pointInCallout, with: event)
         }
         
         if let callout = calloutView {
-            if (hitView == nil && self.selected) {
-                hitView = callout.hitTest(point, withEvent: event)
+            if (hitView == nil && self.isSelected) {
+                hitView = callout.hitTest(point, with: event)
             }
         }
         
