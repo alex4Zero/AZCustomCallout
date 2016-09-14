@@ -1,5 +1,5 @@
 # AZCustomCallout
-Here is an example of custom callout view for iOS MapKit implemented in Swift 2
+Here is an example of custom callout view for iOS MapKit implemented with Swift 3
 
 ![alt tag](https://github.com/alex4Zero/AZCustomCallout/blob/master/screenshots/small-screenshot.png?raw=true)
 
